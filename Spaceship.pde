@@ -2,33 +2,63 @@ class Spaceship extends Floater
 {   
     Spaceship(){
     	corners = 3;
+    	xCorners = new int[corners];
+    	yCorners = new int[corners];
     	xCorners[0] = -8;
     	yCorners[0] = -8;
-    	xCorners[0] = 16;
-    	yCorners[0] = 0;
-    	xCorners[0] = -8;
-    	yCorners[0] = 8;
+    	xCorners[1] = 16;
+    	yCorners[1] = 0;
+    	xCorners[2] = -8;
+    	yCorners[2] = 8;
 
-    	myColor = (200);
+    	myColor = (255);
 
     	myCenterX = 100;
     	myCenterY = 100;
 
-    	myDirectionX =10;
-    	myDirectionY =10;
+    	myDirectionX =0;
+    	myDirectionY =0;
 
-    	myPointDirection = 50;
+    	myPointDirection = 0;
     }
 
- //    public void move(){
-	// myCenterX += myDirectionX;
-	// myCenterY += myDirectionY;
 
-	// if (myCenterX<0){myCenterX = w;}
-	// else if (myCenterX>w){myCenterX = 0;}
-	// else if (myCenterY<0){myCenterY = h;}
-	// else if (myCenterY>h){myCenterY = 0;}
+ 	public void hyperspace(){
+ 		myDirectionX = 0;
+ 		myDirectionY = 0;
+ 		myCenterX = Math.random()*500;
+ 		myCenterY = Math.random()*500;
+ 	}
 
-	// }
+ 	public void w(){
+ 		//myCenterY+=myDirectionY;
+		myDirectionY-=3;
+		if(myPointDirection>270)myPointDirection-=6;
+		if(myPointDirection<270)myPointDirection+=6;
+		
+	}
+	public void a(){
+		//myCenterX+=myDirectionX;
+		myDirectionX-=3;
+		if(myPointDirection>180)myPointDirection-=6;
+		if(myPointDirection<180)myPointDirection+=6;
+	}
+
+	public void s(){
+		//myCenterY+=myDirectionY;
+		myDirectionY+=3;
+		if(myPointDirection>90)myPointDirection-=6;
+		if(myPointDirection<90)myPointDirection+=6;
+	}
+	public void d(){
+		//myCenterX+=myDirectionX;
+		myDirectionX+=3;
+		if(myPointDirection>0)myPointDirection+=6;
+		if(myPointDirection<0)myPointDirection-=6;
+	}
+
+	public double getMyPD(){
+		return myPointDirection;
+	}
 
 }
