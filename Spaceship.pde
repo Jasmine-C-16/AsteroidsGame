@@ -24,37 +24,39 @@ class Spaceship extends Floater
 
 
  	public void hyperspace(){
+ 		background(244,35,69);
  		myDirectionX = 0;
  		myDirectionY = 0;
  		myCenterX = Math.random()*500;
  		myCenterY = Math.random()*500;
+ 		myPointDirection = (int) (Math.random()*360);
  	}
 
  	public void w(){
  		//myCenterY+=myDirectionY;
-		myDirectionY-=3;
-		if(myPointDirection>270)myPointDirection-=6;
+		myDirectionY-=1;
+		if(myPointDirection>=270)myPointDirection-=6;
 		if(myPointDirection<270)myPointDirection+=6;
 		
 	}
 	public void a(){
 		//myCenterX+=myDirectionX;
-		myDirectionX-=3;
-		if(myPointDirection>180)myPointDirection-=6;
+		myDirectionX-=1;
+		if(myPointDirection>=180)myPointDirection-=6;
 		if(myPointDirection<180)myPointDirection+=6;
 	}
 
 	public void s(){
 		//myCenterY+=myDirectionY;
-		myDirectionY+=3;
-		if(myPointDirection>90)myPointDirection-=6;
+		myDirectionY+=1;
+		if(myPointDirection>=90)myPointDirection-=6;
 		if(myPointDirection<90)myPointDirection+=6;
 	}
 	public void d(){
 		//myCenterX+=myDirectionX;
-		myDirectionX+=3;
-		if(myPointDirection>0)myPointDirection+=6;
-		if(myPointDirection<0)myPointDirection-=6;
+		myDirectionX+=1;
+		if(myPointDirection>=180)myPointDirection+=6;
+		if(myPointDirection<180)myPointDirection-=6;
 	}
 
 	public double getMyPD(){
