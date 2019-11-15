@@ -55,8 +55,15 @@ class Spaceship extends Floater
 	public void d(){
 		//myCenterX+=myDirectionX;
 		myDirectionX+=1;
-		if(myPointDirection>=180)myPointDirection+=6;
-		if(myPointDirection<180)myPointDirection-=6;
+		if(myPointDirection!=0 && myPointDirection!=360)myPointDirection+=6;
+		if(myPointDirection<180)myPointDirection+=6;
+		else if(myPointDirection<0)myPointDirection+=6;
+	}
+	public void q(){
+		myPointDirection-=6;
+	}
+	public void e(){
+		myPointDirection+=6;
 	}
 
 	public double getMyPD(){

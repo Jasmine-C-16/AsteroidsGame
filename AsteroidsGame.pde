@@ -25,11 +25,13 @@ public void draw(){
 }
 
 public void keyPressed(){
-	if (key == 'e'){
-		minx.hyperspace();
-	}
+	if (key == 'r'){minx.hyperspace();}
+	
 	if (key == 'w'){minx.w();}
 	if (key == 'a'){minx.a();}
 	if (key == 's'){minx.s();}
 	if (key == 'd'){minx.d();}
+
+	if (key == 'q'){minx.q();}
+	if (key == 'e'){minx.e();}
 }
