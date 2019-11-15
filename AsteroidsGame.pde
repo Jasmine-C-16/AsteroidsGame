@@ -1,5 +1,4 @@
-Spaceship minx; //= new Spaceship();
-Star[] stars;
+Spaceship minx; 
 
 public void setup(){
   size(500,500);
@@ -21,7 +20,7 @@ public void draw(){
  	
   	minx.move();
   	minx.show();
-  	System.out.println(minx.getMyPD());
+  	
 }
 
 public void keyPressed(){
