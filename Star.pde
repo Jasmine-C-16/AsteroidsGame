@@ -9,7 +9,7 @@ class Star //note that this class does NOT extend Floater
   	size = (int)(Math.random()*6);
   	r = (int)(Math.random()*255);
   	g = (int)(Math.random()*255);
-	b = (int)(Math.random()*255);
+	  b = (int)(Math.random()*255);
   }
 
   public void show(){

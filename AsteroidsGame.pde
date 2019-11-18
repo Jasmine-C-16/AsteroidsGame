@@ -1,13 +1,19 @@
 Spaceship minx; 
+Star[] stars;
+Asteroids[] aster;
 
 public void setup(){
   size(500,500);
   background(0);
   minx = new Spaceship();
   stars = new Star[300];
+  aster = new Asteroids[20];
 
   for (int i=0; i<300; i++){
   	stars[i] = new Star();
+  }
+  for (int i=0; i<20; i++){
+  	aster[i] = new Asteroids();
   }
 
 }
@@ -16,6 +22,11 @@ public void draw(){
 
 	for (int i=0; i<300; i++){
   	stars[i].show();
+ 	}
+
+ 	for (int i=0; i<20; i++){
+	 	aster[i].move();
+	  	aster[i].show();
  	}
  	
   	minx.move();
