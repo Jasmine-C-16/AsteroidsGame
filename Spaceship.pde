@@ -11,7 +11,7 @@ class Spaceship extends Floater
     	xCorners[2] = -8;
     	yCorners[2] = 8;
 
-    	myColor = (255);
+    	myColor = color(220,0,42);
 
     	myCenterX = 100;
     	myCenterY = 100;
@@ -35,29 +35,33 @@ class Spaceship extends Floater
  	public void w(){
  		//myCenterY+=myDirectionY;
 		myDirectionY-=1;
-		if(myPointDirection>=270)myPointDirection-=6;
-		if(myPointDirection<270)myPointDirection+=6;
+		// if(myPointDirection>=270)myPointDirection-=6;
+		// if(myPointDirection<270)myPointDirection+=6;
+		myPointDirection=270;
 		
 	}
 	public void a(){
 		//myCenterX+=myDirectionX;
 		myDirectionX-=1;
-		if(myPointDirection>=180)myPointDirection-=6;
-		if(myPointDirection<180)myPointDirection+=6;
+		// if(myPointDirection>=180)myPointDirection-=6;
+		// if(myPointDirection<180)myPointDirection+=6;
+		myPointDirection=180;
 	}
 
 	public void s(){
 		//myCenterY+=myDirectionY;
 		myDirectionY+=1;
-		if(myPointDirection>=90)myPointDirection-=6;
-		if(myPointDirection<90)myPointDirection+=6;
+		// if(myPointDirection>=90)myPointDirection-=6;
+		// if(myPointDirection<90)myPointDirection+=6;
+		myPointDirection=90;
 	}
 	public void d(){
 		//myCenterX+=myDirectionX;
 		myDirectionX+=1;
-		if(myPointDirection!=0 && myPointDirection!=360)myPointDirection+=6;
-		if(myPointDirection<180)myPointDirection+=6;
-		else if(myPointDirection<0)myPointDirection+=6;
+		// if(myPointDirection!=0 && myPointDirection!=360)myPointDirection+=6;
+		// if(myPointDirection<180)myPointDirection+=6;
+		// else if(myPointDirection<0)myPointDirection+=6;
+		myPointDirection=0;
 	}
 	public void q(){
 		myPointDirection-=6;
