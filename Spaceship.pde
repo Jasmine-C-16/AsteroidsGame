@@ -27,41 +27,44 @@ class Spaceship extends Floater
  		background(244,35,69);
  		myDirectionX = 0;
  		myDirectionY = 0;
- 		myCenterX = Math.random()*500;
- 		myCenterY = Math.random()*500;
+ 		myCenterX = Math.random()*400;
+ 		myCenterY = Math.random()*400;
  		myPointDirection = (int) (Math.random()*360);
  	}
 
  	public void w(){
- 		//myCenterY+=myDirectionY;
-		myDirectionY-=1;
+ 		myDirectionY--;
+ 		//myDirectionX;
 		// if(myPointDirection>=270)myPointDirection-=6;
 		// if(myPointDirection<270)myPointDirection+=6;
-		myPointDirection=270;
+		// myPointDirection=270;
 		
 	}
 	public void a(){
 		//myCenterX+=myDirectionX;
-		myDirectionX-=1;
+		//myDirectionX-=1;
+		myPointDirection-=0.2;
 		// if(myPointDirection>=180)myPointDirection-=6;
 		// if(myPointDirection<180)myPointDirection+=6;
-		myPointDirection=180;
+		//myPointDirection=180;
 	}
 
 	public void s(){
-		//myCenterY+=myDirectionY;
-		myDirectionY+=1;
+		// myCenterY+=myDirectionY;
+		// myCenterX+=myDirectionX;
+		myDirectionY--;
 		// if(myPointDirection>=90)myPointDirection-=6;
 		// if(myPointDirection<90)myPointDirection+=6;
-		myPointDirection=90;
+		// myPointDirection=90;
 	}
 	public void d(){
 		//myCenterX+=myDirectionX;
-		myDirectionX+=1;
+		//myDirectionX+=1;
+		myPointDirection+=0.2;
 		// if(myPointDirection!=0 && myPointDirection!=360)myPointDirection+=6;
 		// if(myPointDirection<180)myPointDirection+=6;
 		// else if(myPointDirection<0)myPointDirection+=6;
-		myPointDirection=0;
+		// myPointDirection=0;
 	}
 	public void q(){
 		myPointDirection-=6;

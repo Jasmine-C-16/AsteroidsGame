@@ -46,12 +46,12 @@ class Floater //Do NOT modify the Floater class! Make changes in the Spaceship c
       myCenterY = height;    
     }
 
-    if (myDirectionX>0)myDirectionX-=.25;
-    if (myDirectionY>0)myDirectionY-=.25; 
-    if (myDirectionX<0)myDirectionX+=.25;
-    if (myDirectionY<0)myDirectionY+=.25;
-    if (myPointDirection>360)myPointDirection=0;
-    if (myPointDirection<(-360))myPointDirection=0;   
+    // if (myDirectionX>0)myDirectionX-=.25;
+    // if (myDirectionY>0)myDirectionY-=.25; 
+    // if (myDirectionX<0)myDirectionX+=.25;
+    // if (myDirectionY<0)myDirectionY+=.25;
+    // if (myPointDirection>360)myPointDirection=0;
+    // if (myPointDirection<(-360))myPointDirection=0;   
   }   
   public void show ()  //Draws the floater at the current position  
   {             
