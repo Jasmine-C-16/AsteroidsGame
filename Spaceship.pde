@@ -33,7 +33,7 @@ class Spaceship extends Floater
  	}
 
  	public void w(){
- 		myDirectionY--;
+ 		accelerate(0.15);
  		//myDirectionX;
 		// if(myPointDirection>=270)myPointDirection-=6;
 		// if(myPointDirection<270)myPointDirection+=6;
@@ -43,7 +43,7 @@ class Spaceship extends Floater
 	public void a(){
 		//myCenterX+=myDirectionX;
 		//myDirectionX-=1;
-		myPointDirection-=0.2;
+		turn(-2);
 		// if(myPointDirection>=180)myPointDirection-=6;
 		// if(myPointDirection<180)myPointDirection+=6;
 		//myPointDirection=180;
@@ -52,7 +52,7 @@ class Spaceship extends Floater
 	public void s(){
 		// myCenterY+=myDirectionY;
 		// myCenterX+=myDirectionX;
-		myDirectionY--;
+		accelerate(-0.15);
 		// if(myPointDirection>=90)myPointDirection-=6;
 		// if(myPointDirection<90)myPointDirection+=6;
 		// myPointDirection=90;
@@ -60,7 +60,8 @@ class Spaceship extends Floater
 	public void d(){
 		//myCenterX+=myDirectionX;
 		//myDirectionX+=1;
-		myPointDirection+=0.2;
+		//myPointDirection+=0.2;
+		turn(2);
 		// if(myPointDirection!=0 && myPointDirection!=360)myPointDirection+=6;
 		// if(myPointDirection<180)myPointDirection+=6;
 		// else if(myPointDirection<0)myPointDirection+=6;

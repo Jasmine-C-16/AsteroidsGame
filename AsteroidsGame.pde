@@ -34,7 +34,7 @@ public void draw(){
 	  	aster[i].show();
  	}
  	
- 	minx.accelerate(minx.getMyPD());
+ 	//minx.accelerate(minx.getMyPD());
   	minx.move();
   	minx.show();
   	
@@ -43,9 +43,9 @@ public void draw(){
 public void keyPressed(){
 	if (key == 'r'){minx.hyperspace();}
 	
-	if (key == 'w'){minx.accelerate(minx.getMyPD());}
+	if (key == 'w'){minx.w();}
 	if (key == 'a'){minx.a();}
-	if (key == 's'){minx.accelerate(-(minx.getMyPD()));}
+	if (key == 's'){minx.s();}
 	if (key == 'd'){minx.d();}
 
 	if (key == 'q'){minx.q();}
