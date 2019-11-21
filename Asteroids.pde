@@ -41,6 +41,8 @@ class Asteroids extends Floater{
 	    {     
 	      myCenterY = height;    
 	    }
+
+	    
 	}
 
 	// public void show(){

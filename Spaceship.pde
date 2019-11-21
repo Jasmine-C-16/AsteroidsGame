@@ -77,5 +77,11 @@ class Spaceship extends Floater
 	public double getMyPD(){
 		return myPointDirection;
 	}
+	public int getMyDX(){
+		return myDirectionX;
+	}
+	public int getMyDY(){
+		return myDirectionY;
+	}
 
 }

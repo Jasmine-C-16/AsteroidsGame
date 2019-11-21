@@ -32,6 +32,10 @@ public void draw(){
  	for (int i=0; i<astnum; i++){
 	 	aster[i].move();
 	  	aster[i].show();
+	  	
+	  	if(dist(myCenterX, myCenterY,minx.getMyDX(),minx.getMyDY()){
+	    	
+	    }
  	}
  	
  	//minx.accelerate(minx.getMyPD());
