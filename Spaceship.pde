@@ -11,10 +11,10 @@ class Spaceship extends Floater
     	xCorners[2] = -8;
     	yCorners[2] = 8;
 
-    	myColor = color(220,0,42);
+    	myColor = color(230,12,42);
 
-    	myCenterX = 100;
-    	myCenterY = 100;
+    	myCenterX = 250;
+    	myCenterY = 250;
 
     	myDirectionX =0;
     	myDirectionY =0;
@@ -34,38 +34,15 @@ class Spaceship extends Floater
 
  	public void w(){
  		accelerate(0.15);
- 		//myDirectionX;
-		// if(myPointDirection>=270)myPointDirection-=6;
-		// if(myPointDirection<270)myPointDirection+=6;
-		// myPointDirection=270;
-		
 	}
 	public void a(){
-		//myCenterX+=myDirectionX;
-		//myDirectionX-=1;
-		turn(-2);
-		// if(myPointDirection>=180)myPointDirection-=6;
-		// if(myPointDirection<180)myPointDirection+=6;
-		//myPointDirection=180;
+		turn(-4);
 	}
-
 	public void s(){
-		// myCenterY+=myDirectionY;
-		// myCenterX+=myDirectionX;
 		accelerate(-0.15);
-		// if(myPointDirection>=90)myPointDirection-=6;
-		// if(myPointDirection<90)myPointDirection+=6;
-		// myPointDirection=90;
 	}
 	public void d(){
-		//myCenterX+=myDirectionX;
-		//myDirectionX+=1;
-		//myPointDirection+=0.2;
-		turn(2);
-		// if(myPointDirection!=0 && myPointDirection!=360)myPointDirection+=6;
-		// if(myPointDirection<180)myPointDirection+=6;
-		// else if(myPointDirection<0)myPointDirection+=6;
-		// myPointDirection=0;
+		turn(4);
 	}
 	public void q(){
 		myPointDirection-=6;
@@ -77,11 +54,17 @@ class Spaceship extends Floater
 	public double getMyPD(){
 		return myPointDirection;
 	}
-	public int getMyDX(){
+	public double getMyDX(){
 		return myDirectionX;
 	}
-	public int getMyDY(){
+	public double getMyDY(){
 		return myDirectionY;
+	}
+	public double getmyCenterX(){
+		return myCenterX;
+	}
+	public double getmyCenterY(){
+		return myCenterY;
 	}
 
 }
