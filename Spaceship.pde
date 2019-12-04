@@ -24,7 +24,7 @@ class Spaceship extends Floater
 
 
  	public void hyperspace(){
- 		background(244,35,69);
+ 		background(244,35,129);
  		myDirectionX = 0;
  		myDirectionY = 0;
  		myCenterX = Math.random()*400;
@@ -44,12 +44,12 @@ class Spaceship extends Floater
 	public void d(){
 		turn(4);
 	}
-	public void q(){
-		myPointDirection-=6;
-	}
-	public void e(){
-		myPointDirection+=6;
-	}
+	// public void q(){
+	// 	myPointDirection-=6;
+	// }
+	// public void e(){
+	// 	myPointDirection+=6;
+	// }
 
 	public double getMyPD(){
 		return myPointDirection;

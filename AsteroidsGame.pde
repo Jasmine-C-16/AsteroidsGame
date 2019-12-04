@@ -1,4 +1,4 @@
-Spaceship minx; 
+Spaceship ship; 
 Star[] stars;
 //Asteroids[] aster;
 ArrayList <Asteroids> aster;
@@ -11,15 +11,15 @@ public void setup(){
   astnum = 10;
   starnum = 200;
 
-  minx = new Spaceship();
+  ship = new Spaceship();
   stars = new Star[starnum];
-  aster = new ArrayList <Asteroids>(astnum);
+  aster = new ArrayList <Asteroids>();
 
   for (int i=0; i<starnum; i++){
   	stars[i] = new Star();
   }
-  for (int i=0; i<aster.size(); i++){
-  	aster.set(i,new Asteroids());
+  for (int i=0; i<astnum; i++){
+  	aster.add(i,new Asteroids());
   }
 
 }
@@ -31,24 +31,26 @@ public void draw(){
  	}
 
  	for (int i=0; i<aster.size(); i++){
-  	if(dist((float)(aster.get(i,myCenterX)), (float)(aster.get(i,getmyCenterY())), (float)(minx.getmyCenterX()),(float)(minx.getmyCenterX()))>10){
-    	aster[i].move();
-      aster[i].show();
+  	if(dist((float)(aster.get(i).getmyCenterX()), (float)(aster.get(i).getmyCenterY()),(float)(ship.getmyCenterX()),(float)(ship.getmyCenterX()))>10){
+    	aster.get(i).move();
+      aster.get(i).show();
+      System.out.println(i);
     }
  	}
-  	minx.move();
-  	minx.show();
+
+  ship.move();
+  ship.show();
   	
 }
 
 public void keyPressed(){
-	if (key == 'r'){minx.hyperspace();}
+	if (key == 'r'){ship.hyperspace();}
 	
-	if (key == 'w'){minx.w();}
-	if (key == 'a'){minx.a();}
-	if (key == 's'){minx.s();}
-	if (key == 'd'){minx.d();}
+	if (key == 'w'){ship.w();}
+	if (key == 'a'){ship.a();}
+	if (key == 's'){ship.s();}
+	if (key == 'd'){ship.d();}
 
-	// if (key == 'q'){minx.q();}
-	// if (key == 'e'){minx.e();}
+	// if (key == 'q'){ship.q();}
+	// if (key == 'e'){ship.e();}
 }
