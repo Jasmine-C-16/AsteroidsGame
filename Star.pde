@@ -2,10 +2,11 @@ class Star //note that this class does NOT extend Floater
 {
 
   private int x,y,size,r,g,b;
-  
+  private int j;
   Star(){
-  	x = (int)(Math.random()*500);
-  	y = (int)(Math.random()*500);
+    j = 700;
+  	x = (int)(Math.random()*j);
+  	y = (int)(Math.random()*j);
   	size = (int)(Math.random()*6);
   	r = (int)(Math.random()*255);
   	g = (int)(Math.random()*255);

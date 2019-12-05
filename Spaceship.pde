@@ -11,7 +11,7 @@ class Spaceship extends Floater
     	xCorners[2] = -8;
     	yCorners[2] = 8;
 
-    	myColor = color(230,12,42);
+    	myColor = color(70,212,152);
 
     	myCenterX = 250;
     	myCenterY = 250;
@@ -33,23 +33,17 @@ class Spaceship extends Floater
  	}
 
  	public void w(){
- 		accelerate(0.15);
+ 		accelerate(0.2);
 	}
 	public void a(){
-		turn(-4);
+		turn(-6);
 	}
 	public void s(){
-		accelerate(-0.15);
+		accelerate(-0.2);
 	}
 	public void d(){
-		turn(4);
+		turn(6);
 	}
-	// public void q(){
-	// 	myPointDirection-=6;
-	// }
-	// public void e(){
-	// 	myPointDirection+=6;
-	// }
 
 	public double getMyPD(){
 		return myPointDirection;
