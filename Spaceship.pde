@@ -30,9 +30,7 @@ class Spaceship extends Floater
  		myCenterX = Math.random()*400;
  		myCenterY = Math.random()*400;
  		myPointDirection = (int) (Math.random()*360);
- 	
  	}
-
 
  	public void w(){
  		accelerate(0.2);
@@ -43,7 +41,6 @@ class Spaceship extends Floater
 	}
 	public void s(){
 		accelerate(-0.2);
-
 		fire();
 	}
 	public void d(){
@@ -84,6 +81,5 @@ class Spaceship extends Floater
 
 	    rotate(-1*dRadians);
 	    translate(-1*(float)myCenterX, -1*(float)myCenterY);
-	    System.out.println("ff");
 	}
 }
