@@ -57,6 +57,8 @@ class Floater //Do NOT modify the Floater class! Make changes in the Spaceship c
     // if (myDirectionY>100)myDirectionY=100;
     // if (myDirectionX<(-100))myDirectionX=(-100);
     // if (myDirectionY<(-100))myDirectionY=(-100);
+
+    
   }   
 
   public void show ()  //Draws the floater at the current position  

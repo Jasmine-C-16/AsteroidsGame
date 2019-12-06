@@ -35,7 +35,6 @@ public void draw(){
   	if(dist((float)(aster.get(i).getmyCenterX()), (float)(aster.get(i).getmyCenterY()),(float)(ship.getmyCenterX()),(float)(ship.getmyCenterX()))>10){
     	aster.get(i).move();
       aster.get(i).show();
-      //System.out.println(i);
     }
  	}
 
