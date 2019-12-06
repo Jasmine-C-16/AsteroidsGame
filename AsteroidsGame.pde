@@ -26,15 +26,18 @@ public void setup(){
 public void draw(){
 
 	background(0);
-  bg();
+  //bg();
 	for (int i=0; i<starnum; i++){
   		stars[i].show();
  	}
 
  	for (int i=0; i<aster.size(); i++){
-  	if(dist((float)(aster.get(i).getmyCenterX()), (float)(aster.get(i).getmyCenterY()),(float)(ship.getmyCenterX()),(float)(ship.getmyCenterX()))>10){
+  	if(dist((float)(aster.get(i).getmyCenterX()), (float)(aster.get(i).getmyCenterY()),(float)(ship.getmyCenterX()),(float)(ship.getmyCenterX()))>25){
     	aster.get(i).move();
       aster.get(i).show();
+    }
+    else{
+      aster.remove(i);
     }
  	}
 

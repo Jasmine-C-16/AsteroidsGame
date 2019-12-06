@@ -10,7 +10,7 @@ class Asteroids extends Floater{
 
 		for (int i=0;i<corners;i++){
 			xCorners[i] = (int)((Math.random()*80)-40);
-			yCorners[i] = (int)((Math.random()*80)-40);
+			yCorners[i] = -(int)((Math.random()*80)-40);
 		}
 
 		myCenterX=0;
@@ -20,8 +20,8 @@ class Asteroids extends Floater{
 		myPointDirection = Math.random()*360;
 
 		col = (Math.random()*2)-1;
-		if (col>0) myColor=(0);
-		else myColor=(245);
+		if (col>0) myColor=(60);
+		else myColor=(205);
 	}
 
 	public void move(){
