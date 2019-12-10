@@ -1,7 +1,7 @@
 Spaceship ship; 
 Star[] stars;
-//Asteroids[] aster;
 ArrayList <Asteroids> aster;
+ArrayList <Bullets> dots;
 int astnum, starnum;
 
 public void setup(){
@@ -14,6 +14,7 @@ public void setup(){
   ship = new Spaceship();
   stars = new Star[starnum];
   aster = new ArrayList <Asteroids>();
+  dots = new ArrayList <Bullets>();
 
   for (int i=0; i<starnum; i++){
   	stars[i] = new Star();
@@ -23,10 +24,11 @@ public void setup(){
   }
 
 }
+
 public void draw(){
 
 	background(0);
-  //bg();
+
 	for (int i=0; i<starnum; i++){
   		stars[i].show();
  	}
@@ -43,6 +45,17 @@ public void draw(){
 
   ship.move();
   ship.show();
+
+  for (int i=0; i<dots.size(); i++){
+    dots.get(i).move();
+    dots.get(i).show();
+    //System.out.println("j");
+
+    if (dots.get(i).getMyCenterX()>600 || dots.get(i).getMyCenterY()>600)
+      dots.remove(i);
+    if (dots.get(i).getMyCenterX()<0 || dots.get(i).getMyCenterX()<0)
+      dots.remove(i);
+  }
   	
 }
 
@@ -53,6 +66,13 @@ public void keyPressed(){
 	if (key == 'a'){ship.a();}
 	if (key == 's'){ship.s();}
 	if (key == 'd'){ship.d();}
+  if (key == 'f'){dots.add(new Bullets(ship));
+    //System.out.println("m");
+  }
+
+  // if (key==CODED){
+  //   if (keyCode==VK_SPACE){dots.add(new Bullets(ship));}
+  // }
 
 	// if (key == 'q'){ship.q();}
 	// if (key == 'e'){ship.e();}
