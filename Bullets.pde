@@ -1,7 +1,10 @@
 class Bullets extends Floater{
 	double dRadians;
+	double sx, sy;
 
 	Bullets(Spaceship theShip){ 
+		sx = theShip.getMyDX();
+		sy = theShip.getMyDY();
 		myCenterX = theShip.getmyCenterX();
 		myCenterY = theShip.getmyCenterY();
 		myPointDirection = theShip.getMyPD();
@@ -22,6 +25,11 @@ class Bullets extends Floater{
 
 	public double getMyCenterY(){
 		return myCenterY;
+	}
+	public void move(){
+		myCenterX += myDirectionX;    
+     	myCenterY += myDirectionY; 
+ 		
 	}
 
 }

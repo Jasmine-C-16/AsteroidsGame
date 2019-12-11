@@ -34,14 +34,14 @@ class Spaceship extends Floater
 
  	public void w(){
  		accelerate(0.2);
- 		fire();
+ 		jets();
 	}
 	public void a(){
 		turn(-6);
 	}
 	public void s(){
 		accelerate(-0.2);
-		fire();
+		jets();
 	}
 	public void d(){
 		turn(6);
@@ -63,7 +63,7 @@ class Spaceship extends Floater
 		return myCenterY;
 	}
 
-	public void fire(){
+	public void jets(){
 
 		float xx = (float)myCenterX;
 		float yy = (float)myCenterY;

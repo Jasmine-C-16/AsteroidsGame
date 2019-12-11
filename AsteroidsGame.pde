@@ -49,12 +49,20 @@ public void draw(){
   for (int i=0; i<dots.size(); i++){
     dots.get(i).move();
     dots.get(i).show();
-    //System.out.println("j");
+    //System.out.println(dots.get(i).getMyCenterX() + "  " + dots.get(i).getMyCenterY());
+    if (dots.get(i).getMyCenterX()>=600 || dots.get(i).getMyCenterY()>=600 || dots.get(i).getMyCenterX()<=0 || dots.get(i).getMyCenterY()<=0){
+      dots.remove(i);
+    }
+  }
 
-    if (dots.get(i).getMyCenterX()>600 || dots.get(i).getMyCenterY()>600)
-      dots.remove(i);
-    if (dots.get(i).getMyCenterX()<0 || dots.get(i).getMyCenterX()<0)
-      dots.remove(i);
+  for (int i=dots.size();i>0;i--){
+    for (int p=aster.size();p>0;p--){
+      if (dots.get(i).getMyCenterX()-aster.get(p).getmyCenterX()<=20 && dots.get(i).getMyCenterY()-aster.get(p).getmyCenterY()<=20){
+        dots.remove(i);
+        aster.remove(p);
+        break;
+      }
+    }
   }
   	
 }
@@ -66,16 +74,7 @@ public void keyPressed(){
 	if (key == 'a'){ship.a();}
 	if (key == 's'){ship.s();}
 	if (key == 'd'){ship.d();}
-  if (key == 'f'){dots.add(new Bullets(ship));
-    //System.out.println("m");
-  }
-
-  // if (key==CODED){
-  //   if (keyCode==VK_SPACE){dots.add(new Bullets(ship));}
-  // }
-
-	// if (key == 'q'){ship.q();}
-	// if (key == 'e'){ship.e();}
+  if (key == ' '){dots.add(new Bullets(ship));}
 }
 
 public void bg(){
