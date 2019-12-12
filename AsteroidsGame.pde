@@ -2,7 +2,10 @@ Spaceship ship;
 Star[] stars;
 ArrayList <Asteroids> aster;
 ArrayList <Bullets> dots;
+ArrayList <MiniRocks> rocks;
 int astnum, starnum;
+float hx,hy,ix,iy;
+float wx,wy,xx,xy;
 
 public void setup(){
   size(600,600);
@@ -15,6 +18,7 @@ public void setup(){
   stars = new Star[starnum];
   aster = new ArrayList <Asteroids>();
   dots = new ArrayList <Bullets>();
+  rocks = new ArrayList <MiniRocks>();
 
   for (int i=0; i<starnum; i++){
   	stars[i] = new Star();
@@ -43,9 +47,6 @@ public void draw(){
     }
  	}
 
-  ship.move();
-  ship.show();
-
   for (int i=0; i<dots.size(); i++){
     dots.get(i).move();
     dots.get(i).show();
@@ -55,16 +56,45 @@ public void draw(){
     }
   }
 
-  for (int i=dots.size();i>0;i--){
-    for (int p=aster.size();p>0;p--){
-      if (dots.get(i).getMyCenterX()-aster.get(p).getmyCenterX()<=20 && dots.get(i).getMyCenterY()-aster.get(p).getmyCenterY()<=20){
-        dots.remove(i);
-        aster.remove(p);
+  for (int i=0; i<rocks.size()-1; i++){
+    rocks.get(i).move();
+    rocks.get(i).show();
+  }
+
+  ship.move();
+  ship.show();
+
+  for (int i=dots.size(); i>0; i--){
+    for (int p=aster.size(); p>0; p--){
+      hx=(float)(dots.get(i-1).getMyCenterX());
+      hy=(float)(dots.get(i-1).getMyCenterY());
+      ix=(float)(aster.get(p-1).getmyCenterX());
+      iy=(float)(aster.get(p-1).getmyCenterY());
+
+      if (dist(hx, hy, ix, iy)<30){
+        dots.remove(i-1);
+        aster.remove(p-1);
+        rocks.add(new MiniRocks(aster.get(p-2).getmyCenterX(), aster.get(p-2).getmyCenterY()));
         break;
       }
     }
   }
   	
+  for (int i=dots.size(); i>0; i--){
+    for (int o=rocks.size(); o>0; o--){
+      wx=(float)(dots.get(i-1).getMyCenterX());
+      wy=(float)(dots.get(i-1).getMyCenterY());
+      xx=(float)(rocks.get(o-1).getmyCenterX());
+      xy=(float)(rocks.get(o-1).getmyCenterY());
+
+      if (dist(wx, wy, xx, xy)<30){
+        dots.remove(i-1);
+        rocks.remove(o-1);
+        break;
+      }
+
+    }
+  }
 }
 
 public void keyPressed(){
