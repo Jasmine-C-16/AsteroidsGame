@@ -3,9 +3,9 @@ Star[] stars;
 ArrayList <Asteroids> aster;
 ArrayList <Bullets> dots;
 ArrayList <MiniRocks> rocks;
-int astnum, starnum;
-float hx,hy,ix,iy;
-float wx,wy,xx,xy;
+private int astnum, starnum;
+private float hx,hy,ix,iy;
+private float wx,wy,xx,xy;
 
 public void setup(){
   size(600,600);
@@ -56,11 +56,6 @@ public void draw(){
     }
   }
 
-  for (int i=0; i<rocks.size()-1; i++){
-    rocks.get(i).move();
-    rocks.get(i).show();
-  }
-
   ship.move();
   ship.show();
 
@@ -73,13 +68,21 @@ public void draw(){
 
       if (dist(hx, hy, ix, iy)<30){
         dots.remove(i-1);
+        rocks.add(new MiniRocks(aster.get(p-1).getmyCenterX(), aster.get(p-1).getmyCenterY()));
+        rocks.add(new MiniRocks(aster.get(p-1).getmyCenterX(), aster.get(p-1).getmyCenterY()));
+        //System.out.println(rocks.get(0).getmyCenterX());
         aster.remove(p-1);
-        rocks.add(new MiniRocks(aster.get(p-2).getmyCenterX(), aster.get(p-2).getmyCenterY()));
+        
         break;
       }
     }
   }
-  	
+
+  for (int i=0; i<rocks.size()-1; i++){
+    rocks.get(i).move();
+    rocks.get(i).show();
+  }
+
   for (int i=dots.size(); i>0; i--){
     for (int o=rocks.size(); o>0; o--){
       wx=(float)(dots.get(i-1).getMyCenterX());

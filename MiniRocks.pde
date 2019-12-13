@@ -9,20 +9,44 @@ class MiniRocks extends Asteroids{
 		yCorners = new int[corners];
 
 		for (int i=0;i<corners;i++){
-			xCorners[i] = (int)((Math.random()*80)-40);
-			yCorners[i] = -(int)((Math.random()*80)-40);
+			xCorners[i] = (int)((Math.random()*50)-40);
+			yCorners[i] = -(int)((Math.random()*50)-40);
 		}
 
 		myCenterX=rx;
 		myCenterY=ry;
-		myDirectionX= Math.random()*10-5;
-		myDirectionY= Math.random()*10-5;
+		myDirectionX= Math.random()*8-4;
+		myDirectionY= Math.random()*8-4;
 		myPointDirection = Math.random()*360;
 
 		col = (Math.random()*2)-1;
-		if (col>0) myColor=(60);
+		if (col>0) myColor=(80);
 		else myColor=(205);
 	}
+
+	// public void move(){
+	// 	myCenterX+=myDirectionX;
+	// 	myCenterY+=myDirectionY;
+	// 	turn(rotspeed);
+
+	// 	if(myCenterX >width){     
+	//       myCenterX = 0;    
+	//     }    
+	//     else if (myCenterX<0){     
+	//       myCenterX = width;    
+	//     }    
+
+	//     if(myCenterY >height){    
+	//       myCenterY = 0;    
+	//     } 
+	//     else if (myCenterY<0){     
+	//       myCenterY = height;    
+	//     }
+	// }
+
+	// public void show(){
+
+	// }
 
 	public double getmyCenterX(){
 		return myCenterX;

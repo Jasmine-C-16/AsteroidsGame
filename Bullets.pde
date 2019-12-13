@@ -1,6 +1,6 @@
 class Bullets extends Floater{
-	double dRadians;
-	double sx, sy;
+	private double dRadians;
+	private double sx, sy;
 
 	Bullets(Spaceship theShip){ 
 		sx = theShip.getMyDX();
